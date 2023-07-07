@@ -1,10 +1,10 @@
 {
     "type": 1,
-    "title": "App Title",
-    "name": "container-name",
+    "title": "Wyze Bridge",
+    "name": "wyze-bridge",
     "description": "This is a description.",
     "logo": "https://raw.githubusercontent.com/SelfhostedPro/selfhosted_templates/master/Images/transmission-icon.png",
-    "image": "dev/application:latest",
+    "image": "mrlt8/wyze-bridge:latest",
     "note": "This is a note",
     "categories": [
       "Other",
