@@ -3,7 +3,7 @@
   "title": "Wyze Bridge",
   "name": "wyze-bridge",
   "description": "This is a description.",
-  "logo": "https://raw.githubusercontent.com/SelfhostedPro/selfhosted_templates/master/Images/transmission-icon.png",
+  "logo": "git ",
   "image": "mrlt8/wyze-bridge:latest",
   "note": "none",
   "categories": [
