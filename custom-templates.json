@@ -18,7 +18,9 @@
         "8888:8888/tcp",
         "8889:8889/tcp",
         "8189:8189/udp",
-        "5000:5000/tcp"
+        {
+          "WebUI": "5000:5000/tcp"
+        }
       ],
     "network_mode": "bridge",
     "volumes": [
@@ -30,6 +32,14 @@
         "container": "/etc/localtime",
         "bind": "!localtime"
       }
+    ],
+    "sysctls": [
+      {
+      "net.ipv6.conf.all.disable_ipv6": "0"
+      }
+    ],
+    "cap_add": [
+      "NET_ADMIN"
     ],
     "env": [
       {
