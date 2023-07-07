@@ -1,0 +1,54 @@
+{
+    "type": 1,
+    "title": "Wyze Bridge",
+    "name": "wyze-bridge",
+    "description": "This is a description.",
+    "logo": "https://raw.githubusercontent.com/SelfhostedPro/selfhosted_templates/master/Images/transmission-icon.png",
+    "image": "mrlt8/wyze-bridge:latest",
+    "note": "This is a note",
+    "categories": [
+      "Other",
+      "Tools"
+    ],
+    "platform": "linux",
+    "restart_policy": "unless-stopped",
+    "ports": [
+        "1935:1935/tcp",
+        "8554:8554/tcp",
+        "8888:8888/tcp",
+        "8889:8889/tcp",
+        "8189:8189/udp",
+        {
+          "WebUI": "5000:5000/tcp"
+        }
+      ],
+    "network_mode": "bridge",
+    "volumes": [
+      {
+        "container": "/data",
+        "bind": "!downloads"
+      },
+      {
+        "container": "/etc/localtime",
+        "bind": "!localtime"
+      }
+    ],
+    "env": [
+      {
+        "name": "PUID",
+        "label": "PUID",
+        "default": "1000"
+      },
+      {
+        "name": "PGID",
+        "label": "PGID",
+        "default": "1000"
+      },
+      {
+        "name": "EnvWithDescription",
+        "label": "EnvWithDescription",
+        "description": "This is a description",
+        "default": "default"
+      }
+    ]
+  }
