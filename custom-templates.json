@@ -1,10 +1,10 @@
 {
     "type": 1,
-    "title": "Wyze Bridge",
-    "name": "wyze-bridge",
+    "title": "App Title",
+    "name": "container-name",
     "description": "This is a description.",
     "logo": "https://raw.githubusercontent.com/SelfhostedPro/selfhosted_templates/master/Images/transmission-icon.png",
-    "image": "mrlt8/wyze-bridge:latest",
+    "image": "dev/application:latest",
     "note": "This is a note",
     "categories": [
       "Other",
@@ -13,15 +13,9 @@
     "platform": "linux",
     "restart_policy": "unless-stopped",
     "ports": [
-        "1935:1935/tcp",
-        "8554:8554/tcp",
-        "8888:8888/tcp",
-        "8889:8889/tcp",
-        "8189:8189/udp",
-        {
-          "WebUI": "5000:5000/tcp"
-        }
-      ],
+      "9091:9091/tcp",
+      "9090:9090/tcp"
+    ],
     "network_mode": "bridge",
     "volumes": [
       {
