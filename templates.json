@@ -1,9 +1,9 @@
-[{
+{
   "type": 1,
   "title": "Wyze-Bridge",
   "name": "wyze-bridge",
   "description": "Create a local WebRTC, RTSP, RTMP, or HLS/Low-Latency HLS stream for most of your Wyze cameras including the outdoor, doorbell, and 2K cams.",
-  "logo": "https://external-preview.redd.it/J-SMT19366SpH1TK190f3XKkKYtYttnvwVBSqiMPBrw.jpg?auto=webp&s=1735245830cab0ccf6d98bdbae9a6c017c8b51c6",
+  "logo": "https://raw.githubusercontent.com/SelfhostedPro/selfhosted_templates/master/Images/transmission-icon.png",
   "image": "mrlt8/wyze-bridge:latest",
   "note": "none",
   "categories": [
@@ -71,4 +71,4 @@
       "default": "changeme"
     }
   ]
-}]
+}
