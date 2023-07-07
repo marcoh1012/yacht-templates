@@ -1,8 +1,8 @@
 {
   "type": 1,
-  "title": "Wyze-Bridge",
+  "title": "Wyze Bridge",
   "name": "wyze-bridge",
-  "description": "Create a local WebRTC, RTSP, RTMP, or HLS/Low-Latency HLS stream for most of your Wyze cameras including the outdoor, doorbell, and 2K cams.",
+  "description": "This is a description.",
   "logo": "https://raw.githubusercontent.com/SelfhostedPro/selfhosted_templates/master/Images/transmission-icon.png",
   "image": "mrlt8/wyze-bridge:latest",
   "note": "none",
@@ -43,31 +43,26 @@
     {
       "name": "WYZE_EMAIL",
       "label": "WYZE_EMAIL",
-      "description": "email for wyze account",
       "default": "email@email.com"
     },
     {
       "name": "WYZE_PASSWORD",
       "label": "WYZE_PASSWORD",
-      "description": "password for wyze account",
       "default": "password"
     },
     {
       "name": "WB_IP",
       "label": "WB_IP",
-      "description": "IP Address of the host to enable WebRTC",
       "default": "192.168.0.143"
     },
     {
       "name": "API_ID",
       "label": "API_ID",
-      "description": "api id credential",
       "default": "changeme"
     },
     {
       "name": "API_KEY",
       "label": "API_KEY",
-      "description": "api key cregential",
       "default": "changeme"
     }
   ]
