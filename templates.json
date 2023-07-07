@@ -1,0 +1,74 @@
+{
+  "type": 1,
+  "title": "Wyze-Bridge",
+  "name": "wyze-bridge",
+  "description": "Create a local WebRTC, RTSP, RTMP, or HLS/Low-Latency HLS stream for most of your Wyze cameras including the outdoor, doorbell, and 2K cams.",
+  "logo": "https://external-preview.redd.it/J-SMT19366SpH1TK190f3XKkKYtYttnvwVBSqiMPBrw.jpg?auto=webp&s=1735245830cab0ccf6d98bdbae9a6c017c8b51c6",
+  "image": "mrlt8/wyze-bridge:latest",
+  "note": "none",
+  "categories": [
+    "Other",
+    "Tools"
+  ],
+  "platform": "linux",
+  "restart_policy": "unless-stopped",
+  "ports": [
+    "1935:1935/tcp",
+    "8554:8554/tcp",
+    "8888:8888/tcp",
+    "8889:8889/tcp",
+    "8189:8189/udp",
+    {
+      "WebUI": "5000:5000/tcp"
+    }
+  ],
+  "network_mode": "bridge",
+  "volumes": [
+    {
+      "container": "/config",
+      "bind": "!config"
+    }
+  ],
+  "env": [
+    {
+      "name": "PUID",
+      "label": "PUID",
+      "default": "!PUID"
+    },
+    {
+      "name": "PGID",
+      "label": "PGID",
+      "default": "!PGID"
+    },
+    {
+      "name": "WYZE_EMAIL",
+      "label": "WYZE_EMAIL",
+      "description": "email for wyze account",
+      "default": "email@email.com"
+    },
+    {
+      "name": "WYZE_PASSWORD",
+      "label": "WYZE_PASSWORD",
+      "description": "password for wyze account",
+      "default": "password"
+    },
+    {
+      "name": "WB_IP",
+      "label": "WB_IP",
+      "description": "IP Address of the host to enable WebRTC",
+      "default": "192.168.0.143"
+    },
+    {
+      "name": "API_ID",
+      "label": "API_ID",
+      "description": "api id credential",
+      "default": "changeme"
+    },
+    {
+      "name": "API_KEY",
+      "label": "API_KEY",
+      "description": "api key cregential",
+      "default": "changeme"
+    }
+  ]
+}
