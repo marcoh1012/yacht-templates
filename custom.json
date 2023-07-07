@@ -7,15 +7,20 @@
     "image": "mrlt8/wyze-bridge:latest",
     "note": "This is a note",
     "categories": [
-      "Other",
       "Tools"
     ],
     "platform": "linux",
     "restart_policy": "unless-stopped",
     "ports": [
-      "9091:9091/tcp",
-      "9090:9090/tcp"
-    ],
+        "1935:1935/tcp",
+        "8554:8554/tcp",
+        "8888:8888/tcp",
+        "8889:8889/tcp",
+        "8189:8189/udp",
+        {
+          "WebUI": "5000:5000/tcp"
+        }
+      ],
     "network_mode": "bridge",
     "volumes": [
       {
