@@ -1,3 +1,4 @@
+[
 {
   "type": 1,
   "title": "Wyze Bridge",
@@ -67,4 +68,150 @@
       "default": "changeme"
     }
   ]
+},
+{
+  "type": 1,
+  "title": "Gluetun",
+  "name": "gluetun",
+  "description": "Lightweight swiss-knife-like VPN client to multiple VPN service providers",
+  "logo": "https://github.com/marcoh1012/yacht-templates/blob/666491492188e6f248d738e783b6ac7301ee85cb/icons/gluetun.svg?raw=true",
+  "image": "qmcgaw/gluetun:latest",
+  "note": "Connect To Surfshark",
+  "categories": [
+    "Other",
+    "Tools"
+  ],
+  "platform": "linux",
+  "restart_policy": "unless-stopped",
+  "ports": [
+    {
+      "TDP":"6881:6881",
+      "UDP":"6881:6881/udp",
+      "WebUI": "8085:8085"
+
+    }
+  ],
+  "network_mode": "bridge",
+  "volumes": [
+    {
+      "container": "/gluetun",
+      "bind": "!config"
+    }
+  ],
+  "cap_add": [
+    "NET_ADMIN"
+  ],
+  "env": [
+    {
+      "name": "PUID",
+      "label": "PUID",
+      "default": "!PUID"
+    },
+    {
+      "name": "PGID",
+      "label": "PGID",
+      "default": "!PGID"
+    },
+    {
+      "name": "VPN_SERVICE_PROVIDER",
+      "label": "VPN_SERVICE_PROVIDER",
+      "default": "surfshark"
+    },
+    {
+      "name": "OPENVPN_USER",
+      "label": "OPENVPN_USER",
+      "default": ""
+    },
+    {
+      "name": "OPENVPN_PASSWORD",
+      "label": "OPENVPN_PASSWORD",
+      "default": ""
+    },
+    {
+      "name": "VPN_TYPE",
+      "label": "VPN_TYPE",
+      "default": "openvpn"
+    },
+    {
+      "name": "SERVER_COUNTRIES",
+      "label": "SERVER_COUNTRIES",
+      "default": "US"
+    },
+    {
+      "name": "SERVER_REGIONS",
+      "label": "SERVER_REGIONS",
+      "default": ""
+    },
+    {
+      "name": "SERVER_CITIES",
+      "label": "SERVER_CITIES",
+      "default": ""
+    }
+    ,{
+      "name": "SERVER_HOSTNAMES",
+      "label": "SERVER_HOSTNAMES",
+      "default": ""
+    },
+    {
+      "name": "TZ",
+      "label": "TZ",
+      "default": "US/Chicago"
+    }
+
+  ]
+},
+{
+  "type": 1,
+  "title": "QBittorrent",
+  "name": "qbittorrent",
+  "description": "The Qbittorrent project aims to provide an open-source software alternative to µTorrent. qBittorrent is based on the Qt toolkit and libtorrent-rasterbar library.",
+  "logo": "https://github.com/marcoh1012/yacht-templates/blob/666491492188e6f248d738e783b6ac7301ee85cb/icons/gluetun.svg?raw=true",
+  "image": "lscr.io/linuxserver/qbittorrent:latest",
+  "note": "Torrent Downloads",
+  "categories": [
+    "Other",
+    "Tools"
+  ],
+  "platform": "linux",
+  "restart_policy": "unless-stopped",
+  "network_mode": "sercive:gluetun",
+  "volumes": [
+    {
+      "container": "/config",
+      "bind": "!config"
+    },
+    {
+      "container": "/downloads",
+      "bind": "/downloads"
+    }
+  ],
+  "cap_add": [
+    "NET_ADMIN"
+  ],
+  "env": [
+    {
+      "name": "PUID",
+      "label": "PUID",
+      "default": "!PUID"
+    },
+    {
+      "name": "PGID",
+      "label": "PGID",
+      "default": "!PGID"
+    },
+    {
+      "name": "TZ",
+      "label": "TZ",
+      "default": "US/Chicago"
+    },
+    {
+      "name": "WEBUI_PORT",
+      "label": "WEBUI_PORT",
+      "default": "8085"
+    }
+  ],
+  "depends_on": [
+    "gluetun"
+  ]
 }
+]
