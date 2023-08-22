@@ -20,7 +20,7 @@
       "HLS":"8888:8888/tcp",
       "WebRTC":"8889:8889/tcp",
       "WebRTC/ICE":"8189:8189/udp",
-      "WebUI": "5000:5000/tcp"
+      "WebUI":"5000:5000/tcp"
 
     }
   ],
@@ -85,9 +85,9 @@
   "restart_policy": "unless-stopped",
   "ports": [
     {
-      "TDP":"6881:6881",
+      "TDP":"6881:6881/tcp",
       "UDP":"6881:6881/udp",
-      "WebUI": "8085:8085"
+      "WebUI":"8085:8085/tcp"
 
     }
   ],
