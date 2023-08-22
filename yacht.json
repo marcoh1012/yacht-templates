@@ -174,7 +174,7 @@
   ],
   "platform": "linux",
   "restart_policy": "unless-stopped",
-  "network_mode": "sercive:gluetun",
+  "network_mode": "service:gluetun",
   "volumes": [
     {
       "container": "/config",
