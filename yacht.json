@@ -277,5 +277,46 @@
       "default":"America/Chicago"
     }
   ]
+},
+{
+  "type": 1,
+  "title": "Snippet-Box",
+  "name": "snippet-box",
+  "description": "Snippet Box is a simple self-hosted app for organizing your code snippets. It allows you to easily create, edit, browse and manage your snippets in various languages. With built-in Markdown support, Snippet Box makes it very easy to add notes or simple documentation to your code.",
+  "logo": "https://raw.githubusercontent.com/SelfhostedPro/selfhosted_templates/master/Images/jellyfin.png",
+  "image": "pawelmalak/snippet-box:latest",
+  "categories": [
+    "Tools"
+  ],
+  "platform": "linux",
+  "restart_policy": "unless-stopped",
+  "ports": [
+    {
+      "WebUI": "5050:5000/tcp"
+    }
+  ],
+  "volumes": [
+    {
+      "container": "/app/data",
+      "bind": "!config/snippet-box"
+    }
+  ],
+  "env": [
+    {
+      "name": "PUID",
+      "label": "PUID",
+      "default": "!PUID"
+    },
+    {
+      "name": "PGID",
+      "label": "PGID",
+      "default": "!PGID"
+    },
+    {
+      "name": "TZ",
+      "label": "TZ",
+      "default":"America/Chicago"
+    }
+  ]
 }
 ]
