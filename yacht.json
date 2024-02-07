@@ -318,5 +318,46 @@
       "default":"America/Chicago"
     }
   ]
+},
+{
+  "type": 1,
+  "title": "Uptime Kuma",
+  "name": "uptime-kuma",
+  "description": "Uptime Kuma is an easy-to-use self-hosted monitoring tool.",
+  "logo": "https://github.com/louislam/uptime-kuma/raw/master/public/icon.svg",
+  "image": "ouislam/uptime-kuma:latest",
+  "categories": [
+    "Tools"
+  ],
+  "platform": "linux",
+  "restart_policy": "unless-stopped",
+  "ports": [
+    {
+      "WebUI": "3001:3001"
+    }
+  ],
+  "volumes": [
+    {
+      "container": "/app/data",
+      "bind": "!config/uptime-kuma"
+    }
+  ],
+  "env": [
+    {
+      "name": "PUID",
+      "label": "PUID",
+      "default": "!PUID"
+    },
+    {
+      "name": "PGID",
+      "label": "PGID",
+      "default": "!PGID"
+    },
+    {
+      "name": "TZ",
+      "label": "TZ",
+      "default":"America/Chicago"
+    }
+  ]
 }
 ]
