@@ -318,5 +318,75 @@
       "default":"America/Chicago"
     }
   ]
+},
+{
+  "type": 1,
+  "title": "Wyze Bridge",
+  "name": "wyze-bridge",
+  "description": "Create a local WebRTC, RTSP, RTMP, or HLS/Low-Latency HLS stream for most of your Wyze cameras including the outdoor, doorbell, and 2K cams.",
+  "logo": "https://github.com/marcoh1012/yacht-templates/blob/666491492188e6f248d738e783b6ac7301ee85cb/icons/wyze.png?raw=true",
+  "image": "mrlt8/wyze-bridge:latest",
+  "note": "Streams direct from camera without additional bandwidth or subscriptions.",
+  "categories": [
+    "Other",
+    "Tools"
+  ],
+  "platform": "linux",
+  "restart_policy": "unless-stopped",
+  "ports": [
+    {
+      "RTMP":"1935:1935/tcp",
+      "RTSP":"8554:8554/tcp",
+      "HLS":"8888:8888/tcp",
+      "WebRTC":"8889:8889/tcp",
+      "WebRTC/ICE":"8189:8189/udp",
+      "WebUI":"5000:5000/tcp"
+
+    }
+  ],
+  "network_mode": "bridge",
+  "volumes": [
+    {
+      "container": "/config",
+      "bind": "!config"
+    }
+  ],
+  "env": [
+    {
+      "name": "PUID",
+      "label": "PUID",
+      "default": "!PUID"
+    },
+    {
+      "name": "PGID",
+      "label": "PGID",
+      "default": "!PGID"
+    },
+    {
+      "name": "WYZE_EMAIL",
+      "label": "WYZE_EMAIL",
+      "default": "email@email.com"
+    },
+    {
+      "name": "WYZE_PASSWORD",
+      "label": "WYZE_PASSWORD",
+      "default": "password"
+    },
+    {
+      "name": "WB_IP",
+      "label": "WB_IP",
+      "default": "192.168.0.143"
+    },
+    {
+      "name": "API_ID",
+      "label": "API_ID",
+      "default": "changeme"
+    },
+    {
+      "name": "API_KEY",
+      "label": "API_KEY",
+      "default": "changeme"
+    }
+  ]
 }
 ]
