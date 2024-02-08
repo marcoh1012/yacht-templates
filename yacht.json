@@ -358,5 +358,50 @@
       "default": "!PGID"
     }
   ]
+},
+{
+  "type": 1,
+  "title": "Fenrus",
+  "name": "fenrus",
+  "description": "Fenrus personal home page/dashboard.",
+  "logo": "https://raw.githubusercontent.com/revenz/Fenrus/master/wwwroot/fenrus.svg",
+  "image": "revenz/fenrus:latest",
+  "note": "It allows you to have a custom home page/new tab page with quick access to your personal apps.",
+  "categories": [
+    "Other",
+    "Tools"
+  ],
+  "platform": "linux",
+  "restart_policy": "unless-stopped",
+  "ports": [
+    {
+      "WebUI":"3003:3003/tcp"
+
+    }
+  ],
+  "network_mode": "bridge",
+  "volumes": [
+    {
+      "container": "/app/data",
+      "bind": "!config/fenrus"
+    }
+  ],
+  "env": [
+    {
+      "name": "PUID",
+      "label": "PUID",
+      "default": "!PUID"
+    },
+    {
+      "name": "PGID",
+      "label": "PGID",
+      "default": "!PGID"
+    },
+    {
+      "name": "TZ",
+      "label": "TZ",
+      "default": "America/Chicago"
+    }
+  ]
 }
 ]
