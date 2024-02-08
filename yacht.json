@@ -375,7 +375,7 @@
   "restart_policy": "unless-stopped",
   "ports": [
     {
-      "WebUI":"3003:3003/tcp"
+      "WebUI":"3003:3000/tcp"
 
     }
   ],
