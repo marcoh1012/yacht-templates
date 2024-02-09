@@ -403,46 +403,5 @@
       "default": "America/Chicago"
     }
   ]
-},
-{
-  "type": 1,
-  "title": "Homarr",
-  "name": "homarr",
-  "description": "A sleek, modern dashboard that puts all of your apps and services at your fingertips.",
-  "logo": "None",
-  "image": "ghcr.io/ajnart/homarr:latest",
-  "note": "Simplify the management of your server with Homarr - a sleek, modern dashboard that puts all of your apps and services at your fingertips. With Homarr, you can access and control everything in one convenient location. Homarr seamlessly integrates with the apps you've added, providing you with valuable information and giving you complete control. Installation is a breeze, and Homarr supports a wide range of deployment methods.",
-  "categories": [
-    "Other",
-    "Tools",
-    "Dashboard"
-  ],
-  "platform": "linux",
-  "restart_policy": "unless-stopped",
-  "ports": [
-    {
-      "WebUI":"7575:7575"
-
-    }
-  ],
-  "network_mode": "bridge",
-  "volumes": [
-    {
-      "container": "/app/data/configs",
-      "bind": "!config/homarr/configs"
-    },
-    {
-      "container": "/app/public/icons",
-      "bind": "!config/homarr/icons"
-    },
-    {
-      "container": "/data",
-      "bind": "!config/homarr/data"
-    },
-    {
-      "container": "/var/run/docker.sock",
-      "bind": "/var/run/docker.sock"
-    }
-  ]
 }
 ]
