@@ -444,5 +444,50 @@
       "bind": "/var/run/docker.sock"
     }
   ]
+},
+{
+  "type": 1,
+  "title": "Threadfin",
+  "name": "threadfin",
+  "description": "M3U Proxy for Plex DVR and Emby/Jellyfin Live TV. Based on xTeVe.",
+  "logo": "https://raw.githubusercontent.com/Threadfin/Threadfin/main/html/img/logo_w_600x200.png",
+  "image": "fyb3roptik/threadfin:latest",
+  "note": "",
+  "categories": [
+    "Other",
+    "Tools"
+  ],
+  "platform": "linux",
+  "restart_policy": "unless-stopped",
+  "ports": [
+    {
+      "WebUI":"34401:34400/tcp"
+
+    }
+  ],
+  "network_mode": "bridge",
+  "volumes": [
+    {
+      "container": "/home/threadfin",
+      "bind": "!config/thredfin"
+    }
+  ],
+  "env": [
+    {
+      "name": "THREADFIN_BRANCH",
+      "label": "THREADFIN_BRANCH",
+      "default": "beta"
+    },
+    {
+      "name": "THREADFIN_DEBUG",
+      "label": "THREADFIN_DEBUG",
+      "default": "0"
+    },
+    {
+      "name": "THREADFIN_PORT",
+      "label": "THREADFIN_PORT",
+      "default": "34400"
+    }
+  ]
 }
 ]
