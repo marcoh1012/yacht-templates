@@ -469,7 +469,23 @@
   "volumes": [
     {
       "container": "/home/threadfin",
-      "bind": "!config/thredfin"
+      "bind": "!config/threadfin"
+    },
+    {
+      "container": "/home/threadfin/bin",
+      "bind": "!config/threadfin/bin"
+    },
+    {
+      "container": "/home/threadfin/conf",
+      "bind": "!config/threadfin/conf"
+    },
+    {
+      "container": "/home/threadfin/conf/data",
+      "bind": "!config/threadfin/conf/data"
+    },
+    {
+      "container": "/home/threadfin/conf/backup",
+      "bind": "!config/thredfin/conf/backup"
     }
   ],
   "env": [
