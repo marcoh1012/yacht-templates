@@ -562,5 +562,63 @@
       "default": "America/Chicago"
     }
   ]
+},
+{
+  "type": 1,
+  "title": "FlareSolverr",
+  "name": "flaresolverr",
+  "description": "FlareSolverr is a proxy server to bypass Cloudflare and DDoS-GUARD protection.",
+  "logo": "https://github.com/FlareSolverr/FlareSolverr/blob/master/resources/flaresolverr_logo.svg",
+  "image": "ghcr.io/flaresolverr/flaresolverr:latest",
+  "note": "",
+  "categories": [
+    "Other",
+    "Tools",
+    "Proxy"
+  ],
+  "platform": "linux",
+  "restart_policy": "unless-stopped",
+  "ports": [
+    {
+      "WebUI":"8191:8191/tcp"
+
+    }
+  ],
+  "network_mode": "bridge",
+  "volumes": [
+    {
+      "container": "/config",
+      "bind": "!config/flaresolverr/configs"
+    },
+    {
+      "container": "/data/tvshows",
+      "bind": "!tv"
+    },
+    {
+      "container": "/data/movies",
+      "bind": "!movies"
+    },
+    {
+      "container": "/data/custom",
+      "bind": "!custom"
+    }
+  ],
+  "env": [
+    {
+      "name": "PUID",
+      "label": "PUID",
+      "default": "!PUID"
+    },
+    {
+      "name": "PGID",
+      "label": "PGID",
+      "default": "!PGID"
+    },
+    {
+      "name": "LOG_LEVEL",
+      "label": "LOG_LEVEL",
+      "default": "INFO"
+    }
+  ]
 }
 ]
