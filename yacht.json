@@ -589,18 +589,6 @@
     {
       "container": "/config",
       "bind": "!config/flaresolverr/configs"
-    },
-    {
-      "container": "/data/tvshows",
-      "bind": "!tv"
-    },
-    {
-      "container": "/data/movies",
-      "bind": "!movies"
-    },
-    {
-      "container": "/data/custom",
-      "bind": "!custom"
     }
   ],
   "env": [
