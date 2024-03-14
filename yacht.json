@@ -623,13 +623,20 @@
   "restart_policy": "unless-stopped",
   "ports": [
     {
-      "WebUI": "5050:5000/tcp"
+      "DNS":"53:53",
+      "http": "80:80",
+      "https": "443:443",
+      "WebUI":"3003:3003"
     }
   ],
   "volumes": [
     {
-      "container": "/app/data",
-      "bind": "!config/snippet-box"
+      "container": "/opt/adguardhome/conf",
+      "bind": "!config/adguardhome/conf"
+    },
+    {
+      "container": "/opt/adguardhome/work",
+      "bind": "!config/adguardhome/work"
     }
   ],
   "env": [
@@ -648,6 +655,12 @@
       "label": "TZ",
       "default":"America/Chicago"
     }
+  ],
+  "labels": [
+    "traefik.enable=true",
+    "traefik.http.routers.adguardhome.entrypoints=insecure",
+    "traefik.http.routers.adguardhome.rule=Host(`adguard.$DOMAIN`)",
+    "traefik.http.services.adguardhome.loadbalancer.server.port=3000"
   ]
 }
 ]
