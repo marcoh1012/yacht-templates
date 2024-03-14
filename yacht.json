@@ -611,9 +611,9 @@
 },
 {
   "type": 1,
-  "title": "ADGuard",
+  "title": "ADGuard Home",
   "name": "adguardhome",
-  "description": "AdGuard Home is a network-wide software for blocking ads and tracking.",
+  "description": "AdGuard Home is a nestwork-wide software for blocking ads and tracking.",
   "logo": "https://www.gravatar.com/avatar/c04ff98f88bc9d2cebbbd593e8174ddd?s=120&r=g&d=404",
   "image": "adguard/adguardhome",
   "note": "",
@@ -630,7 +630,6 @@
       "http": "80:80",
       "https": "443:443",
       "WebUI":"3003:3003"
-
     }
   ],
   "network_mode": "bridge",
