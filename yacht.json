@@ -608,51 +608,5 @@
       "default": "INFO"
     }
   ]
-},
-{
-  "type": 1,
-  "title": "ADGuard Home",
-  "name": "adguardhome",
-  "description": "AdGuard Home is a nestwork-wide software for blocking ads and tracking.",
-  "logo": "",
-  "image": "adguard/adguardhome",
-  "note": "",
-  "categories": [
-    "Other",
-    "Tools"
-  ],
-  "platform": "linux",
-  "restart_policy": "unless-stopped",
-  "ports": [
-    
-  ],
-  "network_mode": "bridge",
-  "volumes": [
-    {
-      "container": "/opt/adguardhome/conf",
-      "bind": "!config/adguardhome/conf"
-    },
-    {
-      "container": "/opt/adguardhome/work",
-      "bind": "!config/adguardhome/work"
-    }
-  ],
-  "env": [
-    {
-      "name": "PUID",
-      "label": "PUID",
-      "default": "!PUID"
-    },
-    {
-      "name": "PGID",
-      "label": "PGID",
-      "default": "!PGID"
-    },
-    {
-      "name": "LOG_LEVEL",
-      "label": "LOG_LEVEL",
-      "default": "INFO"
-    }
-  ]
 }
 ]
