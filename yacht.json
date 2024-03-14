@@ -608,5 +608,46 @@
       "default": "INFO"
     }
   ]
+},
+{
+  "type": 1,
+  "title": "Ad Guard Home",
+  "name": "adguardhome",
+  "description": "AdGuard Home is a nestwork-wide software for blocking ads and tracking.",
+  "logo": "https://raw.githubusercontent.com/SelfhostedPro/selfhosted_templates/master/Images/jellyfin.png",
+  "image": "adguard/adguardhome:latest",
+  "categories": [
+    "Tools"
+  ],
+  "platform": "linux",
+  "restart_policy": "unless-stopped",
+  "ports": [
+    {
+      "WebUI": "5050:5000/tcp"
+    }
+  ],
+  "volumes": [
+    {
+      "container": "/app/data",
+      "bind": "!config/snippet-box"
+    }
+  ],
+  "env": [
+    {
+      "name": "PUID",
+      "label": "PUID",
+      "default": "!PUID"
+    },
+    {
+      "name": "PGID",
+      "label": "PGID",
+      "default": "!PGID"
+    },
+    {
+      "name": "TZ",
+      "label": "TZ",
+      "default":"America/Chicago"
+    }
+  ]
 }
 ]
