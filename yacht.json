@@ -614,7 +614,7 @@
   "title": "Ad Guard Home",
   "name": "adguardhome",
   "description": "AdGuard Home is a nestwork-wide software for blocking ads and tracking.",
-  "logo": "https://www.gravatar.com/avatar/c04ff98f88bc9d2cebbbd593e8174ddd?s=120&r=g&d=404",
+  "logo": "https://github.com/marcoh1012/yacht-templates/blob/666491492188e6f248d738e783b6ac7301ee85cb/icons/gluetun.svg?raw=true",
   "image": "adguard/adguardhome:latest",
   "categories": [
     "Tools"
