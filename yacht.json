@@ -619,18 +619,12 @@
   "note": "",
   "categories": [
     "Other",
-    "Tools",
-    "ADS"
+    "Tools"
   ],
   "platform": "linux",
   "restart_policy": "unless-stopped",
   "ports": [
-    {
-      "DNS":"53:53",
-      "http": "80:80",
-      "https": "443:443",
-      "WebUI":"3003:3003"
-    }
+    
   ],
   "network_mode": "bridge",
   "volumes": [
@@ -659,12 +653,6 @@
       "label": "LOG_LEVEL",
       "default": "INFO"
     }
-  ],
-  "labels": [
-    "traefik.enable=true",
-    "traefik.http.routers.adguardhome.entrypoints=insecure",
-    "traefik.http.routers.adguardhome.rule=Host(`adguard.$DOMAIN`)",
-    "traefik.http.services.adguardhome.loadbalancer.server.port=3000"
   ]
 }
 ]
