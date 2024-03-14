@@ -608,5 +608,64 @@
       "default": "INFO"
     }
   ]
+},
+{
+  "type": 1,
+  "title": "ADGuard",
+  "name": "adguardhome",
+  "description": "AdGuard Home is a network-wide software for blocking ads and tracking.",
+  "logo": "https://www.gravatar.com/avatar/c04ff98f88bc9d2cebbbd593e8174ddd?s=120&r=g&d=404",
+  "image": "adguard/adguardhome",
+  "note": "",
+  "categories": [
+    "Other",
+    "Tools",
+    "ADS"
+  ],
+  "platform": "linux",
+  "restart_policy": "unless-stopped",
+  "ports": [
+    {
+      "DNS":"53:53",
+      "http": "80:80",
+      "https": "443:443",
+      "WebUI":"3003:3003"
+
+    }
+  ],
+  "network_mode": "bridge",
+  "volumes": [
+    {
+      "container": "/opt/adguardhome/conf",
+      "bind": "!config/adguardhome/conf"
+    },
+    {
+      "container": "/opt/adguardhome/work",
+      "bind": "!config/adguardhome/work"
+    }
+  ],
+  "env": [
+    {
+      "name": "PUID",
+      "label": "PUID",
+      "default": "!PUID"
+    },
+    {
+      "name": "PGID",
+      "label": "PGID",
+      "default": "!PGID"
+    },
+    {
+      "name": "LOG_LEVEL",
+      "label": "LOG_LEVEL",
+      "default": "INFO"
+    }
+  ],
+  "labels": [
+    "traefik.enable=true",
+    "traefik.http.routers.adguardhome.entrypoints=insecure",
+    "traefik.http.routers.adguardhome.rule=Host(`adguard.$DOMAIN`)",
+    "traefik.http.services.adguardhome.loadbalancer.server.port=3000"
+  ]
 }
 ]
