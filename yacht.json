@@ -624,9 +624,11 @@
   "ports": [
     {
       "WebUI": "3003:3000/tcp",
-      "DNS":"53:53",
-      "http": "80:80",
-      "https": "443:443"
+      "DNS":"53:53/tcp",
+      "DNS-UDP":"53:53/upd",
+      "http": "80:80/tcp",
+      "https": "443:443/tcp",
+      "https-udp": "443:443/udp"
     }
   ],
   "volumes": [
