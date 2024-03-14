@@ -623,7 +623,10 @@
   "restart_policy": "unless-stopped",
   "ports": [
     {
-      "WebUI": "3003:3000/tcp"
+      "WebUI": "3003:3000/tcp",
+      "DNS":"53:53",
+      "http": "80:80",
+      "https": "443:443"
     }
   ],
   "volumes": [
