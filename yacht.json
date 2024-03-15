@@ -649,5 +649,52 @@
       "default":"America/Chicago"
     }
   ]
+},
+{
+  "type": 1,
+  "title": "NGINX Proxy Manager",
+  "name": "nginx-proxy-manager",
+  "description": "NGINX Proxy Manager enables you to easily forward to your websites running at home or otherwise, including free SSL, without having to know too much about NGINX or Letsencrypt.",
+  "logo": "https://github.com/NginxProxyManager/nginx-proxy-manager/blob/develop/frontend/app-images/logo-256.png?raw=true",
+  "image": "jc21/nginx-proxy-manager:latest",
+  "categories": [
+    "Tools"
+  ],
+  "platform": "linux",
+  "restart_policy": "unless-stopped",
+  "ports": [
+    {
+      "HTTP Proxy": "80:80/tcp",
+      "WebUI": "81:81/tcp",
+      "HTTPS Proxy": "443:443/tcp"
+    }
+  ],
+  "volumes": [
+    {
+      "container": "/data",
+      "bind": "!config/nginx-proxy/data"
+    },
+    {
+      "container": "/letsencrypt",
+      "bind": "!config/nginx-proxy/letsencrypt"
+    }
+  ],
+  "env": [
+    {
+      "name": "PUID",
+      "label": "PUID",
+      "default": "!PUID"
+    },
+    {
+      "name": "PGID",
+      "label": "PGID",
+      "default": "!PGID"
+    },
+    {
+      "name": "TZ",
+      "label": "TZ",
+      "default":"America/Chicago"
+    }
+  ]
 }
 ]
