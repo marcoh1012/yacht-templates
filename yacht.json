@@ -675,7 +675,7 @@
       "bind": "!config/nginx-proxy/data"
     },
     {
-      "container": "/letsencrypt",
+      "container": "/etc/letsencrypt",
       "bind": "!config/nginx-proxy/letsencrypt"
     }
   ],
