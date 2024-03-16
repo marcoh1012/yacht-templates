@@ -628,8 +628,12 @@
   ],
   "volumes": [
     {
-      "container": "/app/data",
-      "bind": "!config/snippet-box"
+      "container": "/opt/adguardhome/work",
+      "bind": "!config/adguardhome/work"
+    },
+    {
+      "container": "/opt/adguardhome/conf",
+      "bind": "!config/adguardhome/conf"
     }
   ],
   "env": [
