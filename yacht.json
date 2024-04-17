@@ -621,6 +621,7 @@
   ],
   "platform": "linux",
   "restart_policy": "unless-stopped",
+  "network_mode": "bridge",
   "ports": [
     {
       "WebUI": "3003:3000/tcp"
@@ -700,5 +701,46 @@
       "default":"America/Chicago"
     }
   ]
-}
+},
+{
+  "type": 1,
+  "title": "Jellyseerr",
+  "name": "jellyseerr",
+  "description": "Jellyseerr is a free and open source software application for managing requests for your media library. It is a fork of Overseerr built to bring support for Jellyfin & Emby media servers!",
+  "logo": "https://github.com/Fallenbagel/jellyseerr/raw/develop/public/logo_full.svg",
+  "image": "fallenbagel/jellyseerr:latest",
+  "note": "None",
+  "categories": [
+    "Other",
+    "Tools",
+    "Media"
+  ],
+  "platform": "linux",
+  "restart_policy": "unless-stopped",
+  "ports": [
+    {
+      "WebUI":"5055:5055/tcp"
+
+    }
+  ],
+  "network_mode": "bridge",
+  "volumes": [
+    {
+      "container": "/app/config",
+      "bind": "!config/jellyseerr"
+    }
+  ],
+  "env": [
+    {
+      "name": "PUID",
+      "label": "PUID",
+      "default": "!PUID"
+    },
+    {
+      "name": "PGID",
+      "label": "PGID",
+      "default": "!PGID"
+    }
+  ]
+},
 ]
