@@ -742,5 +742,45 @@
       "default": "!PGID"
     }
   ]
+},
+{
+  "type": 1,
+  "title": "homepage",
+  "name": "homepage",
+  "description": "A modern, fully static, fast, secure fully proxied, highly customizable application dashboard with integrations for over 100 services and translations into multiple languages. Easily configured via YAML files or through docker label discovery.",
+  "logo": "https://raw.githubusercontent.com/gethomepage/homepage/main/images/banner_dark%402x.png",
+  "image": "ghcr.io/gethomepage/homepage:latest",
+  "note": "None",
+  "categories": [
+    "Other",
+    "Tools"
+  ],
+  "platform": "linux",
+  "restart_policy": "unless-stopped",
+  "ports": [
+    {
+      "WebUI":"3000:3000/tcp"
+
+    }
+  ],
+  "network_mode": "bridge",
+  "volumes": [
+    {
+      "container": "/app/config",
+      "bind": "!config/homepage"
+    }
+  ],
+  "env": [
+    {
+      "name": "PUID",
+      "label": "PUID",
+      "default": "!PUID"
+    },
+    {
+      "name": "PGID",
+      "label": "PGID",
+      "default": "!PGID"
+    }
+  ]
 }
 ]
