@@ -782,5 +782,45 @@
       "default": "!PGID"
     }
   ]
+},
+{
+  "type": 1,
+  "title": "dizquetv",
+  "name": "dizquetv",
+  "description": "Create live TV channel streams from media on your Plex servers.",
+  "logo": "https://raw.githubusercontent.com/vexorian/dizquetv/main/resources/dizquetv.png",
+  "image": "vexorian/dizquetv:latest",
+  "note": "None",
+  "categories": [
+    "Other",
+    "Tools"
+  ],
+  "platform": "linux",
+  "restart_policy": "unless-stopped",
+  "ports": [
+    {
+      "WebUI":"8005:8000/tcp"
+
+    }
+  ],
+  "network_mode": "bridge",
+  "volumes": [
+    {
+      "container": "/config",
+      "bind": "!config/dizque"
+    }
+  ],
+  "env": [
+    {
+      "name": "PUID",
+      "label": "PUID",
+      "default": "!PUID"
+    },
+    {
+      "name": "PGID",
+      "label": "PGID",
+      "default": "!PGID"
+    }
+  ]
 }
 ]
