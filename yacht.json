@@ -822,5 +822,73 @@
       "default": "!PGID"
     }
   ]
+},
+{
+  "type": 1,
+  "title": "Stirling-PDF",
+  "name": "stirling-pdf",
+  "description": "This is a robust, locally hosted web-based PDF manipulation tool using Docker. It enables you to carry out various operations on PDF files, including splitting, merging, converting, reorganizing, adding images, rotating, compressing, and more. This locally hosted web application has evolved to encompass a comprehensive set of features, addressing all your PDF requirements.",
+  "logo": "https://raw.githubusercontent.com/Stirling-Tools/Stirling-PDF/main/docs/stirling.png",
+  "image": "frooodle/s-pdf:latest",
+  "note": "None",
+  "categories": [
+    "Other",
+    "Tools",
+    "PDF"
+  ],
+  "platform": "linux",
+  "restart_policy": "unless-stopped",
+  "ports": [
+    {
+      "WebUI":"8010:8080/tcp"
+
+    }
+  ],
+  "network_mode": "bridge",
+  "volumes": [
+    {
+      "container": "/usr/share/tessdata",
+      "bind": "!config/stirling-pdf/testdata"
+    },
+    {
+      "container": "/configs",
+      "bind": "!config/stirling-pdf/configs"
+    },
+    {
+      "container": "/logs",
+      "bind": "!config/stirling-pdf/logs"
+    },
+    {
+      "container": "/customFiles/",
+      "bind": "!config/stirling-pdf/files"
+    }
+  ],
+  "env": [
+    {
+      "name": "PUID",
+      "label": "PUID",
+      "default": "!PUID"
+    },
+    {
+      "name": "PGID",
+      "label": "PGID",
+      "default": "!PGID"
+    },
+    {
+      "name": "DOCKER_ENABLE_SECURITY",
+      "label": "DOCKER_ENABLE_SECURITY",
+      "default": "false"
+    },
+    {
+      "name": "INSTALL_BOOK_AND_ADVANCED_HTML_OPS",
+      "label": "INSTALL_BOOK_AND_ADVANCED_HTML_OPS",
+      "default": "false"
+    },
+    {
+      "name": "LANGS",
+      "label": "LANGS",
+      "default": "en_US"
+    }
+  ]
 }
 ]
